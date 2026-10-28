@@ -52,7 +52,7 @@ if (!"POST".equalsIgnoreCase(request.getMethod())) {
             && quantity >= 1 && quantity <= 10;
 
     if (!valid) {
-        response.setStatus(HttpServletResponse.SC_UNPROCESSABLE_ENTITY);
+        response.setStatus(422);
         errorMessage = "Revisa tus datos: escribe un nombre válido, un celular de 7 a 20 caracteres, un producto del menú y una cantidad entre 1 y 10.";
     } else {
         Integer orderCount = (Integer) session.getAttribute("orderCount");
